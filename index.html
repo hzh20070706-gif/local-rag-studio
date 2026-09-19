@@ -33,8 +33,7 @@
   function hash(text){let h=2166136261;for(const c of text){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
   function vector(text){const v=Array(24).fill(0);for(const term of terms(text)){const h=hash(term);v[h%24]+=1;v[(h>>>5)%24]+=.5}const n=Math.hypot(...v)||1;return v.map(x=>x/n)}
   function cosine(a,b){return a.reduce((sum,x,i)=>sum+x*b[i],0)}
-  function splitText(text){const size=state.settings.chunkSize,overlap=state.settings.overlap;const clean=text.replace(/
-/g,'').replace(/[ 	]+
+  function splitText(text){const size=state.settings.chunkSize,overlap=state.settings.overlap;const clean=text.replace(/\r/g,'').replace(/[ 	]+
 /g,'
 ').trim();if(!clean)return[];const parts=[];let start=0;while(start<clean.length){let end=Math.min(clean.length,start+size);if(end<clean.length){const boundary=Math.max(clean.lastIndexOf('
 ',end),clean.lastIndexOf('. ',end),clean.lastIndexOf('。',end));if(boundary>start+Math.floor(size*.55))end=boundary+1}parts.push(clean.slice(start,end).trim());if(end>=clean.length)break;start=Math.max(start+1,end-overlap)}return parts.filter(Boolean)}
