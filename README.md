@@ -10,13 +10,13 @@ Many RAG demos hide the important parts behind a hosted API. Local RAG Studio ma
 
 - Drag-and-drop or paste TXT, Markdown, CSV, JSON, and source files
 - Configurable chunk size and overlap
-- Hybrid retrieval using BM25-style lexical scoring plus deterministic hashed semantic vectors
+- Hybrid retrieval using lexical-overlap scoring plus deterministic hashed semantic vectors
 - Source citations with document name, chunk number, and relevance score
 - Local extractive answer synthesis without an API key
 - Optional provider adapter settings for OpenAI-compatible endpoints
 - Retrieval playground with top-k and lexical/semantic weighting controls
 - Built-in evaluation set with hit-rate and mean reciprocal rank
-- Indexed-document explorer, chunk preview, and deletion
+- Indexed-document explorer with document deletion
 - Workspace persistence in localStorage
 - JSON workspace export
 - Responsive keyboard-friendly interface
@@ -38,9 +38,8 @@ Then open `http://localhost:8080`.
 1. Files are decoded in the browser and normalized.
 2. Text is split into overlapping chunks on paragraph and sentence boundaries.
 3. Each chunk receives term-frequency statistics and a deterministic hashed vector.
-4. Queries are scored with a weighted combination of lexical and cosine similarity.
-5. A diversity pass reduces duplicate adjacent chunks.
-6. The answer panel extracts the strongest supporting sentences and emits numbered citations.
+4. Queries are scored with a weighted combination of lexical overlap and cosine similarity.
+5. The answer panel extracts the strongest supporting sentences and emits numbered citations.
 
 The local vectorizer is intentionally deterministic and dependency-free. It is useful for prototyping and offline search, but it is not a replacement for a production embedding model. The provider settings panel describes how an OpenAI-compatible adapter can be connected in a server-backed deployment without exposing credentials in the browser.
 
