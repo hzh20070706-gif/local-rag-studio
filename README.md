@@ -11,7 +11,6 @@ Many RAG demos hide the important parts behind a hosted API. Local RAG Studio ma
 - Drag-and-drop or paste TXT, Markdown, CSV, JSON, and source files
 - Configurable chunk size and overlap
 - Hybrid retrieval using BM25-style lexical scoring plus deterministic hashed semantic vectors
-- Query expansion and diversity-aware result selection
 - Source citations with document name, chunk number, and relevance score
 - Local extractive answer synthesis without an API key
 - Optional provider adapter settings for OpenAI-compatible endpoints
@@ -20,7 +19,7 @@ Many RAG demos hide the important parts behind a hosted API. Local RAG Studio ma
 - Indexed-document explorer, chunk preview, and deletion
 - Workspace persistence in localStorage
 - JSON workspace export
-- Dark/light theme and responsive keyboard-friendly interface
+- Responsive keyboard-friendly interface
 
 ## Run
 
@@ -57,7 +56,7 @@ Documents and settings remain in the browser. Network access is not used by the 
 
 ## Security notes
 
-Imported content is rendered through text nodes rather than HTML. Workspace import validates the expected schema and size. API secrets are not stored or required.
+Imported content is rendered through text nodes rather than HTML. API secrets are not stored or required.
 
 ## License
 
