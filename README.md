@@ -19,7 +19,7 @@ Many RAG demos hide the important parts behind a hosted API. Local RAG Studio ma
 - Built-in evaluation set with hit-rate and mean reciprocal rank
 - Indexed-document explorer, chunk preview, and deletion
 - Workspace persistence in localStorage
-- JSON workspace export/import
+- JSON workspace export
 - Dark/light theme and responsive keyboard-friendly interface
 
 ## Run
