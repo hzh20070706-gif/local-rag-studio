@@ -59,4 +59,4 @@ Imported content is rendered through text nodes rather than HTML. API secrets ar
 
 ## License
 
-MIT © 2026 hzh20070706-gif.
+MIT © 2026 hzh6767.
